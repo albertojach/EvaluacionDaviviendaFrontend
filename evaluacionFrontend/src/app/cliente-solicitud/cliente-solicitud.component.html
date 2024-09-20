@@ -1,0 +1,33 @@
+<div style="padding: 50px;">
+    <h1 class="text-center">Clientes Solicitud</h1>
+    <table class="table table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th scope="col">Id Sol.</th>
+                <th scope="col">Dui</th>
+                <th scope="col">Nit</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Actividad Economica</th>
+                <th scope="col">Estado Civil</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @for (item of clienteSolicitudList; track $index) {
+            <tr>
+                <th class="row">{{item.idPersona}}</th>
+                <td>{{item.dui}}</td>
+                <td>{{item.nit}}</td>
+                <td>{{item.nombres}}</td>
+                <td>{{item.apellidos}}</td>
+                <td>{{item.sexo}}</td>
+                <td>{{item.idActividadEconomica.descripcion}}</td>
+                <td>{{item.idEstadoCivil.descripcion}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

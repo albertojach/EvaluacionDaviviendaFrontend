@@ -1,0 +1,80 @@
+<div style="padding: 50px;">
+    <h1 class="text-center">Clientes SOAP Demo en Spring Boot Rest</h1>
+    <div>
+        <!--<form>
+            <input type="text" id="id" name="id">
+            <input type="submit" value="Buscar">
+        </form>-->
+        <form class="row g-3">
+            <div class="col-auto">
+              <input type="text" class="form-control" id="inputIdPersona" placeholder="Id Persona" name="id">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <p class="h2">Id Persona: {{idPersona}}</p>
+    <table class="table table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">SSN</th>
+                <th scope="col">DOB</th>
+                <th scope="col">HOGAR</th>
+                <th scope="col">OFICINA</th>
+                <th scope="col">COLOR FAVORITO</th>
+                <th scope="col">EDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of data; track $index) {
+            <tr>
+                <th>{{item.name}}</th>
+                <td>{{item.ssn}}</td>
+                <td>{{item.dob}}</td>
+                <td>
+                    <ul>
+                        <li>
+                            Calle:&nbsp;{{item.home.street}}
+                        </li>
+                        <li>
+                            Cuidad:&nbsp;{{item.home.city}}
+                        </li>
+                        <li>
+                            Estado:&nbsp;{{item.home.state}}
+                        </li>
+                        <li>
+                            Zip:&nbsp;{{item.home.zip}}
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Calle:&nbsp;{{item.office.street}}
+                        </li>
+                        <li>
+                            Cuidad:&nbsp;{{item.office.city}}
+                        </li>
+                        <li>
+                            Estado:&nbsp;{{item.office.state}}
+                        </li>
+                        <li>
+                            Zip:&nbsp;{{item.office.zip}}
+                        </li>
+                    </ul>
+                </td>
+                @if (item.favoriteColors != null) {
+                <td>{{item.favoriteColors.favoriteColorsItem}}</td>
+                }
+                @else {
+                    <td></td>
+                }
+                <td>{{item.age}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

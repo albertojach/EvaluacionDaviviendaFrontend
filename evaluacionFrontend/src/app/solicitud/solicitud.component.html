@@ -1,0 +1,29 @@
+<div style="padding: 50px;">
+    <h1 class="text-center">Solicitudes</h1>
+    <table class="table table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th scope="col">Id Sol.</th>
+                <th scope="col">Id Persona</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Plazo</th>
+                <th scope="col">Forma Pago</th>
+                <th scope="col">Fecha Creacion</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @for (item of solicitudList; track $index) {
+            <tr>
+                <th class="row">{{item.idSolicitud}}</th>
+                <td>{{item.idPersona.idPersona}}</td>
+                <td>{{item.monto}}</td>
+                <td>{{item.plazo}}</td>
+                <td>{{item.idFormaPago.descripcion}}</td>
+                <td>{{item.fechaCreacion}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
